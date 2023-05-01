@@ -1,4 +1,3 @@
 # calculator
 
 calcualtor.
-resolving.
