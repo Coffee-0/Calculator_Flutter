@@ -23,6 +23,8 @@ class HomePage extends StatefulWidget {
 }
 
 class _HomePageState extends State<HomePage> {
+  var userQuestion = '';
+  var userAnswer = '';
   final List<String> buttons = [
     'C',
     'DEL',
@@ -31,7 +33,7 @@ class _HomePageState extends State<HomePage> {
     '9',
     '8',
     '7',
-    'X',
+    'x',
     '6',
     '5',
     '4',
@@ -53,7 +55,30 @@ class _HomePageState extends State<HomePage> {
       body: Column(
         children: [
           Expanded(
-            child: Container(),
+            child: Column(
+              mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+              children: <Widget>[
+                const SizedBox(
+                  height: 50,
+                ),
+                Container(
+                  padding: const EdgeInsets.all(20),
+                  alignment: Alignment.centerLeft,
+                  child: Text(
+                    userQuestion,
+                    style: const TextStyle(fontSize: 20),
+                  ),
+                ),
+                Container(
+                  padding: const EdgeInsets.all(20),
+                  alignment: Alignment.centerRight,
+                  child: Text(
+                    userAnswer,
+                    style: const TextStyle(fontSize: 20),
+                  ),
+                ),
+              ],
+            ),
           ),
           Expanded(
             flex: 2, // Make this twice as large as the top side
@@ -93,7 +118,7 @@ class _HomePageState extends State<HomePage> {
   }
 
   bool isOperator(String x) {
-    if (x == '%' || x == '/' || x == 'X' || x == '+' || x == '-' || x == '=') {
+    if (x == '%' || x == '/' || x == 'x' || x == '+' || x == '-' || x == '=') {
       return true;
     } else {
       return false;
